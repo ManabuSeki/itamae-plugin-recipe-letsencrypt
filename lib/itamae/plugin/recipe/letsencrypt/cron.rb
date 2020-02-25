@@ -3,7 +3,7 @@ if node[:letsencrypt][:authenticator] == 'webroot' && node[:letsencrypt][:http_s
 # DO NOT EDIT
 # BECAUSE THIS CRON CREATE BY itamae-plugin-recipe-letsencrypt
 55 11 * * * #{node[:letsencrypt][:cron_user]} #{node[:letsencrypt][:certbot_auto_path]} renew --deploy-hook "/bin/systemctl reload #{node[:letsencrypt][:http_server]}"
-E
+EOS
 else
   cron_text = <<-EOS
 # DO NOT EDIT
